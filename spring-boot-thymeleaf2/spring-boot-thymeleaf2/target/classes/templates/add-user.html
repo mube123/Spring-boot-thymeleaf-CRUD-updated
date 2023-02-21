@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Add User</title>
+
+<style>
+.form-center 
+{
+  display:flex;
+  justify-content: center;
+}
+</style>
+
+
+</head>
+<body>
+
+<div class="form-center">
+	<form action="#" th:action="@{/adduser}" th:object="${user}" method="post">
+    
+    <label for="name">Name</label>
+    <input type="text" th:field="*{name}" id="name" placeholder="Name">
+    <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+    <br> <br>
+    
+    <label for="email">Email</label>
+    <input type="text" th:field="*{email}" id="email" placeholder="Email">
+    <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+    <br><br>
+     
+    <label for="gender">Gender:</label>
+    <input class="form-check-input" type="radio" th:field="*{gender}" id="option1" value="Male">
+    <label class="form-check-label" for="option1">Male</label>
+    
+    <input class="form-check-input" type="radio" th:field="*{gender}" id="option2" value="Female">
+    <label class="form-check-label" for="option1">Female</label>
+    <br><br>
+    
+    <label for="hobby">Hobbies:</label>
+    <input class="form-check-input" type="checkbox" th:field="*{hobby}" id="option1" value="Programming">
+    <label class="form-check-label" for="option1">Programming</label>
+    
+    <input class="form-check-input" type="checkbox" th:field="*{hobby}" id="option2" value="Coding">
+    <label class="form-check-label" for="option2">Coding</label>
+    
+    <input class="form-check-input" type="checkbox" th:field="*{hobby}" id="option3" value="Editing">
+    <label class="form-check-label" for="option3">Editing</label>
+    <br><br>
+    <input type="submit" value="Register">
+    
+      
+</form>
+</div>
+
+
+
+</body>
+</html>
